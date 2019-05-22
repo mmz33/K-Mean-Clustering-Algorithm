@@ -106,6 +106,7 @@ public:
                     change = true;
                 }
             }
+            if (!change) break;
             for (int i = 0; i < k; ++i) {
                 auto& cluster = clusters[i];
                 const int cluster_size = cluster.points.size();
@@ -117,7 +118,6 @@ public:
                 }
                 cluster.centroid_point = {total_x/cluster_size, total_y/cluster_size};
             }
-            if (!change) break;
             iterations++;
         }
     }
